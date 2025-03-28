@@ -1,18 +1,24 @@
-import React, {useEffect, useState} from 'react'
-import appwriteService from '../appwrite/config'
-import { Container, PostCard } from '../components'
-
+import React, { useEffect, useState } from "react";
+import appwriteService from "../appwrite/config";
+import { Container, PostCard } from "../components";
 
 function Home() {
-    const [posts, setPosts] = useState([])
+    const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-      appwriteService.getPosts().then((posts) => {
-        if (posts) {
-            setPosts(posts.documents)
-        }
-      })
-    }, [])
+        appwriteService.getPosts().then((posts) => {
+            if (posts) {
+                setPosts(posts.documents);
+            }
+        });
+
+        // Load Google AdSense script dynamically
+        const adsScript = document.createElement("script");
+        adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+        adsScript.async = true;
+        adsScript.crossOrigin = "anonymous";
+        document.body.appendChild(adsScript);
+    }, []);
 
     if (posts.length === 0) {
         return (
@@ -27,45 +33,45 @@ function Home() {
                     </div>
                 </Container>
             </div>
-        )
+        );
     }
-    
-  return (
-    <div className='w-full py-8'>
+
+    return (
+        <div className="w-full py-8">
             <Container>
-                <div className='flex flex-wrap'>
+                <div className="flex flex-wrap">
                     {posts.map((post) => (
-                        <div key={post.$id} className='p-2 w-1/4'>
+                        <div key={post.$id} className="p-2 w-1/4">
                             <PostCard {...post} />
-                            
                         </div>
                     ))}
                 </div>
-                <amp-ad width="100vw" height="320"
-                             type="adsense"
-                             data-ad-client="ca-pub-7149159543552980"
-                             data-ad-slot="1157898914"
-                             data-auto-format="mcrspv"
-                             data-full-width="">
-                          <div overflow=""> Ad unit</div>
-                        </amp-ad>
-                            <amp-ad width="100vw" height="320"
-                             type="adsense"
-                             data-ad-client="ca-pub-7149159543552980"
-                             data-ad-slot="1157898914"
-                             data-auto-format="mcrspv"
-                             data-full-width="">
-                          <div overflow=""> Ad unit</div>
-                        </amp-ad>
-                    <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-7149159543552980"
-                     data-ad-slot="4583473763"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
+
+                {/* Google AdSense Ad */}
+                <ins
+                    className="adsbygoogle"
+                    style={{ display: "block" }}
+                    data-ad-client="ca-pub-7149159543552980"
+                    data-ad-slot="1157898914"
+                    data-ad-format="auto"
+                    data-full-width-responsive="true"
+                ></ins>
+
+                <ins
+                    className="adsbygoogle"
+                    style={{ display: "block" }}
+                    data-ad-client="ca-pub-7149159543552980"
+                    data-ad-slot="4583473763"
+                    data-ad-format="auto"
+                    data-full-width-responsive="true"
+                ></ins>
+
+                <script>
+                    {`(adsbygoogle = window.adsbygoogle || []).push({});`}
+                </script>
             </Container>
         </div>
-  )
+    );
 }
 
-export default Home
+export default Home;
