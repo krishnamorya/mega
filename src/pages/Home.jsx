@@ -47,7 +47,7 @@ function Home() {
                              data-ad-slot="1157898914"
                              data-auto-format="mcrspv"
                              data-full-width="">
-                          <div overflow=""></div>
+                          <div overflow=""> Ad unit</div>
                         </amp-ad>
                             <amp-ad width="100vw" height="320"
                              type="adsense"
@@ -55,7 +55,7 @@ function Home() {
                              data-ad-slot="1157898914"
                              data-auto-format="mcrspv"
                              data-full-width="">
-                          <div overflow=""></div>
+                          <div overflow=""> Ad unit</div>
                         </amp-ad>
             </Container>
         </div>
