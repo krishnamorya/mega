@@ -37,6 +37,22 @@ function Home() {
                     {posts.map((post) => (
                         <div key={post.$id} className='p-2 w-1/4'>
                             <PostCard {...post} />
+                            <amp-ad width="100vw" height="320"
+                             type="adsense"
+                             data-ad-client="ca-pub-7149159543552980"
+                             data-ad-slot="1157898914"
+                             data-auto-format="mcrspv"
+                             data-full-width="">
+                          <div overflow=""></div>
+                        </amp-ad>
+                            <amp-ad width="100vw" height="320"
+                             type="adsense"
+                             data-ad-client="ca-pub-7149159543552980"
+                             data-ad-slot="1157898914"
+                             data-auto-format="mcrspv"
+                             data-full-width="">
+                          <div overflow=""></div>
+                        </amp-ad>
                         </div>
                     ))}
                 </div>
