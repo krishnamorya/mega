@@ -57,12 +57,12 @@ function Home() {
                              data-full-width="">
                           <div overflow=""> Ad unit</div>
                         </amp-ad>
-                    <ins class="adsbygoogle"
+{/*                     <ins class="adsbygoogle"
                      style="display:block"
                      data-ad-client="ca-pub-7149159543552980"
                      data-ad-slot="4583473763"
                      data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
+                     data-full-width-responsive="true"></ins> */}
             </Container>
         </div>
   )
